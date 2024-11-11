@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "echo 'No build step required for Node.js backend'",
+    "vercel-build": "prisma generate && node prisma/seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "GalaxyBuilder-Oss",
+  "license": "ISC",
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.688.0",
+    "@prisma/client": "5.22.0",
+    "argon2": "^0.41.1",
+    "aws-sdk": "^2.1692.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "1.4.5-lts.1",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}
