@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build": "echo 'No build step required for Node.js backend'",
-    "vercel-build": "prisma generate && node prisma/seed.js",
+    "dev": "nodemon --watch src --exec \"npm run build && node index.js\"",
+    "build": "prisma generate && esbuild index.js --bundle --platform=node --outfile=dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -30,6 +29,7 @@
     "pg": "^8.13.1"
   },
   "devDependencies": {
+    "esbuild": "^0.24.0",
     "prisma": "^5.22.0"
   }
 }
