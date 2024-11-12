@@ -1,6 +1,7 @@
 import express from "express"
 import portofolios from "./routes/portofolios.js"
 import auth from "./routes/auth.js"
+import file from "./routes/file.js"
 import cors from "cors"
 import dotenv from "dotenv"
 import middleware from "./mid.js"
@@ -16,6 +17,7 @@ app.use(
 
 app.use("/auth", auth)
 app.use("/portofolios", middleware, portofolios)
+app.use("/file", file)
 
 app.get("/",(req,res)=>{
     res.send({message:"Hello World", success:true})
